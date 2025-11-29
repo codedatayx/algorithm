@@ -18,3 +18,21 @@ class Solution {
     }
 }
 //前缀积加后缀积
+
+class Solution {
+
+    public int[] productExceptSelf(int[] nums) {
+        int[] s2 = new int[nums.length];
+        s2[nums.length-1]=1;
+        for(int i=nums.length-2;i>=0;i--){
+            s2[i] = s2[i+1] * nums[i+1];
+        }
+        int pre =1;
+        for(int i=0;i<nums.length;i++){
+            s2[i]*=pre;
+            pre *=nums[i];
+        }
+        return s2;
+    }
+}
+//不使用额外数组
