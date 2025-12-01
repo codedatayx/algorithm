@@ -28,3 +28,20 @@ class Solution {
         return s1;
     }
 }
+//迭代
+class Solution {
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> s1 = new ArrayList<>();
+        Deque<TreeNode> stk = new LinkedList<TreeNode>();
+        while (root != null || !stk.isEmpty()){
+            while(root!=null){
+                stk.push(root);
+                root = root.left;
+            }
+            root = stk.pop();
+            s1.add(root.val);
+            root = root.right;
+        }
+        return s1;
+    }
+}
