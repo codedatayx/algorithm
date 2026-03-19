@@ -22,3 +22,6 @@ class Solution {
         return len;
     }
 }
+
+二刷
+while循环用for替代 j是for的移动指针
